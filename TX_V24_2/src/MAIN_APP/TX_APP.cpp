@@ -775,7 +775,7 @@ static uint8_t F_SoftMap(volatile uint16_t *ReadChannel, volatile uint16_t Min, 
     else DataConvert = map(DataConvert, Middle, Max, 128, TRIP_MAX); // 128-205
   }
 
-  // if( (*Convert)==true ) DataConvert = (uint8_t)(255-(uint8_t)DataConvert);
+  if( (*Convert)==true ) DataConvert = (uint8_t)(255-(uint8_t)DataConvert);
 
   return (uint8_t)DataConvert;
 }
