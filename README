@@ -1,0 +1,39 @@
+
+****** TX & RX V24.2 ******
+
+- Linh kiện TX:
+	+ STM32F103C8T6
+	+ NRF24L01 + 1 tụ 10-20uF, 16v-50v
+	+ Hạ áp 3v3, 3A
+	+ Module PCF8574
+	+ 2 Joystick
+	+ Module còi Low level
+	+ 2 biến trở 10K
+	+ Led 3v3 + 1 điện trở 220Ohm
+	+ 7 Switch ON/OFF
+	+ 1 Công tắc 3 vị trí
+	+ 10 điện trở 10K; 1 điện trở 6k6
+	+ 9 Button
+
+- Linh kiện RX:
+	+ Arduino nano
+	+ NRF24L01 + 1 tụ 10-20uF, 16v-50v
+	+ Hạ áp 5V 3A
+	+ Hạ áp 3V3 1A
+	+ Module cảm biến điện áp 0-25V
+	+ Led 5V, điện trở 220Ohm
+
+===================================================
+			MÔ TẢ CHỨC NĂNG CƠ BẢN
+===================================================
+
+- Tầm hoạt động 100m - 5Km: Tuỳ môi trường và điều kiện thời tiết
+- TX có 8 kênh điều khiển
+- Chế độ tự động kết nối TX và RX
+- Chế độ Setup hành trình MIN-MAX cho kênh 1,2,3,4,8
+- Khi bật nguồn TX nếu KHÔNG kết nối với NRF24L01 và PCF8574 được thì còi sẽ hú liên tục
+- 4 kênh đầu tiên có Switch để đảo chiều
+- 4 kênh đầu tiên có nút nhấn để Strim
+- Chế độ MIX kênh cho kênh 1 và 2: Dùng cho máy bay F hoặc SU
+- 4 kênh đầu tiên có thể chọn chế độ hành trình điều khiển dài hoặc ngắn bằng cách nhấn giữ nút Bind trong 3s
+
