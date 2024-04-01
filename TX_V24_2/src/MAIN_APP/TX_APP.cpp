@@ -32,6 +32,8 @@ static bool TRIP_SELECT=false;
 static uint8_t TRIP_MIN;
 static uint8_t TRIP_MAX;
 
+static uint8_t Buzzer_Button_Strim=false;
+
 static SimpleKalmanFilter KALMAN_CH1(2, 2, 0.1);
 static SimpleKalmanFilter KALMAN_CH2(2, 2, 0.1);
 static SimpleKalmanFilter KALMAN_CH3(2, 2, 0.1);
@@ -746,6 +748,12 @@ static void F_Read_Button(volatile uint8_t *DataRead, volatile uint8_t F_ReadBut
 
   if( *DataRead==0 )
   {
+    if(Buzzer_Button_Strim==false)
+    {
+      COI_ON;
+      Buzzer_Button_Strim=true;
+    }
+
     if( UpDown==false ) 
     {
       if( *Value > (*Min+(((*Min)*10)/100)) ) *Value-=50;
@@ -1024,6 +1032,12 @@ static void F_Action(void)
       Step_select_trip=0;
     }
 
+    if( Buzzer_Button_Strim==true )
+    {
+      COI_OFF;
+      Buzzer_Button_Strim=false;
+    }
+    
     if( Flag_Read_Channel==true ) /* 10ms */
     {
       F_ReadDataChannel();
