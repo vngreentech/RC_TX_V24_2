@@ -32,10 +32,10 @@ static bool TRIP_SELECT=false;
 static uint8_t TRIP_MIN;
 static uint8_t TRIP_MAX;
 
-static SimpleKalmanFilter KALMAN_CH1(4, 2, 0.01);
-static SimpleKalmanFilter KALMAN_CH2(4, 2, 0.01);
-static SimpleKalmanFilter KALMAN_CH3(4, 2, 0.01);
-static SimpleKalmanFilter KALMAN_CH4(4, 2, 0.01);
+static SimpleKalmanFilter KALMAN_CH1(2, 2, 0.1);
+static SimpleKalmanFilter KALMAN_CH2(2, 2, 0.1);
+static SimpleKalmanFilter KALMAN_CH3(2, 2, 0.1);
+static SimpleKalmanFilter KALMAN_CH4(2, 2, 0.1);
 
 /*======================================================*/
 
